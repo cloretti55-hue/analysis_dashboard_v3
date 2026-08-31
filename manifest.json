@@ -1,0 +1,241 @@
+{
+  "schemaVersion": 1,
+  "environment": "labs",
+  "generatedAt": "2026-08-31T23:18:06+00:00",
+  "summary": {
+    "datasetCount": 11,
+    "statusCounts": {
+      "manual": 2,
+      "ok": 4,
+      "stale": 5
+    },
+    "blockingErrorCount": 0
+  },
+  "datasets": [
+    {
+      "id": "curve-us",
+      "path": "data/curve-us.json",
+      "kind": "generated",
+      "status": "stale",
+      "asOf": "2026-07-29",
+      "maxAgeDays": 5,
+      "consumer": [
+        "Yield Curves"
+      ],
+      "producer": "scripts/update-us-yield-curves.py",
+      "workflow": ".github/workflows/update-us-yield-curves.yml",
+      "sha256": "bea39e3e14ef033de8c0160bd5a3a5e2f7ec8a6e9d8f7539e698dc2c345271d3",
+      "maturities": 5,
+      "curveCount": 3,
+      "issues": [
+        {
+          "severity": "warning",
+          "code": "stale_dataset",
+          "message": "Dataset asOf=2026-07-29 exceeds maxAgeDays=5"
+        }
+      ]
+    },
+    {
+      "id": "fed-policy",
+      "path": "data/fed-policy.json",
+      "kind": "generated",
+      "status": "stale",
+      "asOf": "2026-08-03",
+      "maxAgeDays": 5,
+      "consumer": [
+        "Yield Curves"
+      ],
+      "producer": "scripts/update-fed-policy.py",
+      "workflow": ".github/workflows/update-fed-policy.yml",
+      "sha256": "e5d4db6873719c128579b839a01d36d694e0eec6d1689008d6cf6106d1f0371d",
+      "issues": [
+        {
+          "severity": "warning",
+          "code": "stale_dataset",
+          "message": "Dataset asOf=2026-08-03 exceeds maxAgeDays=5"
+        }
+      ]
+    },
+    {
+      "id": "equity-valuation",
+      "path": "data/equity-valuation.json",
+      "kind": "manual",
+      "status": "manual",
+      "asOf": "2026-07-21",
+      "maxAgeDays": 45,
+      "consumer": [
+        "Equity Valuation"
+      ],
+      "producer": null,
+      "workflow": null,
+      "sha256": "dbe51b2f3882593b2bbdf3de66eaedbfd2bf967d78a92a8d2cd43e2886d01ac2",
+      "recordCount": 4,
+      "issues": []
+    },
+    {
+      "id": "equity-valuation-history",
+      "path": "data/equity-valuation-history.json",
+      "kind": "manual",
+      "status": "manual",
+      "asOf": "2026-07-21",
+      "maxAgeDays": 90,
+      "consumer": [],
+      "producer": null,
+      "workflow": null,
+      "sha256": "540a84818fdf34dad4e60417bf259e192fb0959cf6b1d8f7a8adf51324218194",
+      "recordCount": 1,
+      "issues": []
+    },
+    {
+      "id": "sp500-valuation",
+      "path": "data/sp500-valuation.json",
+      "kind": "generated",
+      "status": "stale",
+      "asOf": "2026-07-17",
+      "maxAgeDays": 14,
+      "consumer": [
+        "Equity Valuation"
+      ],
+      "producer": "scripts/update-sp500-valuation.py",
+      "workflow": ".github/workflows/update-sp500-valuation.yml",
+      "sha256": "9491c5de181ace76112285c497743db5cfb7087594ce7b21d521cc8ffee5d47d",
+      "issues": [
+        {
+          "severity": "warning",
+          "code": "stale_dataset",
+          "message": "Dataset asOf=2026-07-17 exceeds maxAgeDays=14"
+        }
+      ]
+    },
+    {
+      "id": "sp500-pe-history",
+      "path": "data/sp500-pe-history.json",
+      "kind": "generated",
+      "status": "ok",
+      "asOf": "2026-07-23",
+      "maxAgeDays": 45,
+      "consumer": [
+        "Equity Valuation"
+      ],
+      "producer": "scripts/update-sp500-pe-history.py",
+      "workflow": ".github/workflows/update-sp500-pe-history.yml",
+      "sha256": "7d7e9a8bcb6c2373328330ed0c6f14026d20dd19f53387912a2cc2e4bb3bb45e",
+      "recordCount": 1866,
+      "yearEndCount": 156,
+      "issues": []
+    },
+    {
+      "id": "mag7-valuation",
+      "path": "data/mag7-valuation.json",
+      "kind": "generated",
+      "status": "stale",
+      "asOf": "2026-07-30",
+      "maxAgeDays": 5,
+      "consumer": [
+        "Equity Valuation"
+      ],
+      "producer": "scripts/update-mag7-valuation.py",
+      "workflow": ".github/workflows/update-mag7-valuation.yml",
+      "sha256": "078437cd1ee881ab5b52bbdf0c85e0472ef0bbf75743f69893e7dcb5587f3f80",
+      "recordCount": 7,
+      "issues": [
+        {
+          "severity": "warning",
+          "code": "stale_dataset",
+          "message": "Dataset asOf=2026-07-30 exceeds maxAgeDays=5"
+        }
+      ]
+    },
+    {
+      "id": "etf-universe",
+      "path": "data/etf-universe.json",
+      "kind": "config",
+      "status": "ok",
+      "asOf": null,
+      "maxAgeDays": null,
+      "consumer": [
+        "ETF performance pipeline"
+      ],
+      "producer": null,
+      "workflow": null,
+      "sha256": "bbee1949f1719b71d28dba9386f60908f1f47a21a3c3f0da6b2ddb21ff5e33ca",
+      "recordCount": 100,
+      "assetClassCounts": {
+        "commodity": 2,
+        "currency": 1,
+        "equity": 75,
+        "fixed_income": 11,
+        "inverse_equity": 8,
+        "volatility": 3
+      },
+      "issues": []
+    },
+    {
+      "id": "etf-performance",
+      "path": "data/etf-performance.json",
+      "kind": "generated",
+      "status": "ok",
+      "asOf": "2026-08-31",
+      "maxAgeDays": 5,
+      "consumer": [
+        "Data Lab"
+      ],
+      "producer": "scripts/update-etf-performance.py",
+      "workflow": ".github/workflows/update-etf-performance.yml",
+      "sha256": "d4e84228f9c127afe878fba2f319e8a49e715f67ab23647b54f8c5ad19b30a14",
+      "recordCount": 100,
+      "chartCoverage": 1.0,
+      "statusCounts": {
+        "ok": 100
+      },
+      "staleCount": 0,
+      "issues": []
+    },
+    {
+      "id": "fixed-income-performance",
+      "path": "data/fixed-income-performance.json",
+      "kind": "generated_fallback",
+      "status": "ok",
+      "asOf": "2026-08-31",
+      "maxAgeDays": 5,
+      "consumer": [
+        "Data Lab"
+      ],
+      "producer": "scripts/update-etf-performance.py",
+      "workflow": ".github/workflows/update-etf-performance.yml",
+      "sha256": "915d8e142755cd72f75341eb2f2d373d56a35809c716b8a5bba3a1e4abb74908",
+      "recordCount": 11,
+      "chartCoverage": 1.0,
+      "statusCounts": {
+        "ok": 11
+      },
+      "staleCount": 0,
+      "issues": []
+    },
+    {
+      "id": "etf-geography",
+      "path": "data/etf-geography.json",
+      "kind": "generated",
+      "status": "stale",
+      "asOf": "2026-06-30",
+      "maxAgeDays": 45,
+      "consumer": [
+        "ETFs"
+      ],
+      "producer": "scripts/update-etf-geography.py",
+      "workflow": ".github/workflows/update-etf-geography.yml",
+      "sha256": "fb6e927d1312d19ab76b458231f7717457d412694c2ec9a40bc34340eb799b61",
+      "recordCount": 13,
+      "statusCounts": {
+        "ok": 13
+      },
+      "issues": [
+        {
+          "severity": "warning",
+          "code": "stale_dataset",
+          "message": "Dataset asOf=2026-06-30 exceeds maxAgeDays=45"
+        }
+      ]
+    }
+  ]
+}
