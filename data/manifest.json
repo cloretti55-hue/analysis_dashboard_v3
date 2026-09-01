@@ -1,15 +1,16 @@
 {
   "schemaVersion": 1,
   "environment": "labs",
-  "generatedAt": "2026-09-01T11:33:06+00:00",
+  "generatedAt": "2026-09-01T12:32:38+00:00",
   "summary": {
     "datasetCount": 11,
     "statusCounts": {
+      "error": 1,
       "manual": 2,
-      "ok": 7,
+      "ok": 6,
       "stale": 2
     },
-    "blockingErrorCount": 0
+    "blockingErrorCount": 1
   },
   "datasets": [
     {
@@ -140,12 +141,12 @@
       ],
       "producer": null,
       "workflow": null,
-      "sha256": "c7dd6b3e6c809d8938cc3690de35e1911300c7fab340e8cb995f1a5652e7d130",
-      "recordCount": 110,
+      "sha256": "ff44476efd66064295ef51841b90249e5331a60f8a46aff825c4d108a62029ed",
+      "recordCount": 120,
       "assetClassCounts": {
         "commodity": 2,
         "currency": 1,
-        "equity": 75,
+        "equity": 85,
         "fixed_income": 21,
         "inverse_equity": 8,
         "volatility": 3
@@ -156,7 +157,7 @@
       "id": "etf-performance",
       "path": "data/etf-performance.json",
       "kind": "generated",
-      "status": "ok",
+      "status": "error",
       "asOf": "2026-09-01",
       "maxAgeDays": 5,
       "consumer": [
@@ -174,6 +175,11 @@
       "staleBenchmarkCount": 11,
       "benchmarkErrorCount": 10,
       "issues": [
+        {
+          "severity": "error",
+          "code": "missing_tickers",
+          "message": "Missing tickers: IUCD, IUCM, IUCS, IUES, IUFS, IUHC, IUIS, IUIT, IUMS, IUUS"
+        },
         {
           "severity": "warning",
           "code": "stale_benchmarks",
@@ -232,7 +238,7 @@
       ],
       "producer": "scripts/update-etf-geography.py",
       "workflow": ".github/workflows/update-etf-geography.yml",
-      "sha256": "b3c9a6ed270e3870a689b451e9c5a9ff2b4d08ce45ae07f7597dffa2828eae63",
+      "sha256": "822485b2ffdd350c642a7a0c8b483e5353681935425e941c4caa3698a760a6d9",
       "recordCount": 13,
       "statusCounts": {
         "ok": 13
