@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "environment": "labs",
-  "generatedAt": "2026-09-01T00:42:20+00:00",
+  "generatedAt": "2026-09-01T11:33:06+00:00",
   "summary": {
     "datasetCount": 11,
     "statusCounts": {
@@ -140,13 +140,13 @@
       ],
       "producer": null,
       "workflow": null,
-      "sha256": "bbee1949f1719b71d28dba9386f60908f1f47a21a3c3f0da6b2ddb21ff5e33ca",
-      "recordCount": 100,
+      "sha256": "c7dd6b3e6c809d8938cc3690de35e1911300c7fab340e8cb995f1a5652e7d130",
+      "recordCount": 110,
       "assetClassCounts": {
         "commodity": 2,
         "currency": 1,
         "equity": 75,
-        "fixed_income": 11,
+        "fixed_income": 21,
         "inverse_equity": 8,
         "volatility": 3
       },
@@ -157,26 +157,32 @@
       "path": "data/etf-performance.json",
       "kind": "generated",
       "status": "ok",
-      "asOf": "2026-08-31",
+      "asOf": "2026-09-01",
       "maxAgeDays": 5,
       "consumer": [
         "Data Lab"
       ],
       "producer": "scripts/update-etf-performance.py",
       "workflow": ".github/workflows/update-etf-performance.yml",
-      "sha256": "8bf66835149bc0b0d77d0c9d01f16c3aaf13bf663d88224224c5cdff4ab0d9b1",
-      "recordCount": 100,
+      "sha256": "a97df95548d7c8b1c8b0d6103f4b0d09084d497ae32b9722e881e6cd96198a92",
+      "recordCount": 110,
       "chartCoverage": 1.0,
       "statusCounts": {
-        "ok": 100
+        "ok": 110
       },
       "staleCount": 0,
       "staleBenchmarkCount": 11,
+      "benchmarkErrorCount": 10,
       "issues": [
         {
           "severity": "warning",
           "code": "stale_benchmarks",
           "message": "11 instrument(s) use a prior benchmark series"
+        },
+        {
+          "severity": "warning",
+          "code": "benchmark_errors",
+          "message": "10 instrument(s) have no available benchmark series"
         }
       ]
     },
@@ -185,26 +191,32 @@
       "path": "data/fixed-income-performance.json",
       "kind": "generated_fallback",
       "status": "ok",
-      "asOf": "2026-08-31",
+      "asOf": "2026-09-01",
       "maxAgeDays": 5,
       "consumer": [
         "Data Lab"
       ],
       "producer": "scripts/update-etf-performance.py",
       "workflow": ".github/workflows/update-etf-performance.yml",
-      "sha256": "e0ef0f2d8f885e06161aca0440dc48cadaf33a9b5e16d3e5605426af5095e2cb",
-      "recordCount": 11,
+      "sha256": "0db69a7c8e31eb2730d71ec0210caf73fa95b2c29d661e0e962bf4918b6fb11e",
+      "recordCount": 21,
       "chartCoverage": 1.0,
       "statusCounts": {
-        "ok": 11
+        "ok": 21
       },
       "staleCount": 0,
       "staleBenchmarkCount": 11,
+      "benchmarkErrorCount": 10,
       "issues": [
         {
           "severity": "warning",
           "code": "stale_benchmarks",
           "message": "11 instrument(s) use a prior benchmark series"
+        },
+        {
+          "severity": "warning",
+          "code": "benchmark_errors",
+          "message": "10 instrument(s) have no available benchmark series"
         }
       ]
     },
