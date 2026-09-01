@@ -1,16 +1,15 @@
 {
   "schemaVersion": 1,
   "environment": "labs",
-  "generatedAt": "2026-09-01T12:32:38+00:00",
+  "generatedAt": "2026-09-01T15:31:53+00:00",
   "summary": {
     "datasetCount": 11,
     "statusCounts": {
-      "error": 1,
       "manual": 2,
-      "ok": 6,
+      "ok": 7,
       "stale": 2
     },
-    "blockingErrorCount": 1
+    "blockingErrorCount": 0
   },
   "datasets": [
     {
@@ -157,7 +156,7 @@
       "id": "etf-performance",
       "path": "data/etf-performance.json",
       "kind": "generated",
-      "status": "error",
+      "status": "ok",
       "asOf": "2026-09-01",
       "maxAgeDays": 5,
       "consumer": [
@@ -165,21 +164,16 @@
       ],
       "producer": "scripts/update-etf-performance.py",
       "workflow": ".github/workflows/update-etf-performance.yml",
-      "sha256": "a97df95548d7c8b1c8b0d6103f4b0d09084d497ae32b9722e881e6cd96198a92",
-      "recordCount": 110,
+      "sha256": "58d9ee9d6745e79d60c9c15e4d58e38e8e9ff1747de1320ad8dc95e52a64c0d7",
+      "recordCount": 120,
       "chartCoverage": 1.0,
       "statusCounts": {
-        "ok": 110
+        "ok": 120
       },
       "staleCount": 0,
       "staleBenchmarkCount": 11,
       "benchmarkErrorCount": 10,
       "issues": [
-        {
-          "severity": "error",
-          "code": "missing_tickers",
-          "message": "Missing tickers: IUCD, IUCM, IUCS, IUES, IUFS, IUHC, IUIS, IUIT, IUMS, IUUS"
-        },
         {
           "severity": "warning",
           "code": "stale_benchmarks",
@@ -204,7 +198,7 @@
       ],
       "producer": "scripts/update-etf-performance.py",
       "workflow": ".github/workflows/update-etf-performance.yml",
-      "sha256": "0db69a7c8e31eb2730d71ec0210caf73fa95b2c29d661e0e962bf4918b6fb11e",
+      "sha256": "19386b5107d4ee7389b6cc471d6915a8c049988410d6d9c3d3cc72f15371c480",
       "recordCount": 21,
       "chartCoverage": 1.0,
       "statusCounts": {
