@@ -369,6 +369,11 @@ body.theme-light .etf-token.is-ucits-highlight {
   flex: 1;
 }
 
+.sector-legend-row .risk-legend {
+  flex: 1;
+  padding-top: 0;
+}
+
 .core-legend .etf-token {
   min-height: 28px;
   min-width: 0;

@@ -98,6 +98,28 @@ class FrontendEtfsModuleTests(unittest.TestCase):
         self.assertIn("--group-accent: var(--zone);", ETFS_CSS)
         self.assertIn("--selection-accent: var(--zone);", ETFS_CSS)
 
+    def test_sectors_pair_us_listed_and_ucits_vehicles_under_one_filter(self):
+        expected_pairs = (
+            ("XLK", "IUIT"),
+            ("XLC", "IUCM"),
+            ("XLY", "IUCD"),
+            ("XLB", "IUMS"),
+            ("XLE", "IUES"),
+            ("XLF", "IUFS"),
+            ("XLI", "IUIS"),
+            ("XLP", "IUCS"),
+            ("XLV", "IUHC"),
+            ("XLU", "IUUS"),
+        )
+        for us_listed, ucits in expected_pairs:
+            self.assertIn(f'tickers: ["{us_listed}", "{ucits}"]', ETFS_JS)
+        self.assertIn('tickers: ["XLRE"]', ETFS_JS)
+        self.assertIn('"aria-label": "Filter sector ETFs by listing type"', ETFS_JS)
+        self.assertIn('setSectorVehicleView("us") }, "US-listed"', ETFS_JS)
+        self.assertIn('setSectorVehicleView("ucits") }, "UCITS"', ETFS_JS)
+        self.assertIn('disabled: !tickerMatchesVehicleView(ticker, vehicleView)', ETFS_JS)
+        self.assertIn('item.tickers.forEach((ticker) => registerEtfDestination(ticker, "sectors", ticker))', ETFS_JS)
+
     def test_fixed_income_selection_reuses_each_category_colour(self):
         fixed_income_rule = ETFS_CSS.split(".etf-token.etf-treasury,", 1)[1].split("}", 1)[0]
         self.assertIn("--selection-accent: var(--token-accent);", fixed_income_rule)
